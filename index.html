@@ -41,8 +41,8 @@
         
         <!-- Project Titles (Centered) -->
         <div class="flex flex-col items-center text-center z-10 mb-12 w-full max-w-5xl">
-            <!-- Replace './Fiji_Water_Logo.png' with your exact image filename -->
-            <img src="Fiji-Water-Logo.png" alt="Fiji Water Logo" class="h-44 md:h-64 lg:h-80 w-auto max-w-full mb-4 object-contain" onerror="this.style.display='none'; document.getElementById('title-fallback').classList.remove('hidden');">
+            <!-- Replace './Fiji_Water_Logo.png' with your exact title image filename when ready -->
+            <img src="./Fiji-Water-Logo.png" alt="Fiji Water Logo" class="h-44 md:h-64 lg:h-80 w-auto max-w-full mb-4 object-contain" onerror="this.style.display='none'; document.getElementById('title-fallback').classList.remove('hidden');">
             <h1 id="title-fallback" class="hidden font-bebas text-7xl md:text-9xl lg:text-[11rem] tracking-wide leading-none mb-4 text-white">
                 FIJI WATER
             </h1>
@@ -51,12 +51,40 @@
             </div>
         </div>
 
-        <!-- Main Media Placeholder (Promo Video Embed) -->
-        <div class="w-full max-w-5xl aspect-video bg-[#0a0a0a] border border-[#2a2a2a] rounded-sm relative group overflow-hidden flex items-center justify-center">
-            <!-- Replace this <p> with a <video> or YouTube/Vimeo <iframe> when ready -->
-            <p class="font-bebas text-3xl md:text-4xl text-[#2a2a2a] tracking-widest text-center px-4 group-hover:scale-110 transition-transform duration-700">
-                FINAL PROMO VIDEO / REEL EMBED
-            </p>
+        <!-- Main Promo Video Showcase (16:9 Widescreen) -->
+        <!-- Rename your video file to 'Fiji_Water_Promo.mp4' or update the src below to match -->
+        <div class="w-full max-w-5xl aspect-video bg-[#0a0a0a] border border-[#2a2a2a] hover:border-white/40 rounded-sm relative group overflow-hidden flex items-center justify-center shadow-2xl transition-colors duration-300">
+            <video
+                id="fiji-promo-video"
+                src="./FijiWater.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                controls
+                class="w-full h-full object-cover"
+            ></video>
+
+            <!-- Label Badge -->
+            <span class="absolute top-3 left-3 bg-black/75 border border-white/15 backdrop-blur-sm px-2.5 py-0.5 rounded text-xs font-bebas tracking-widest text-gray-200 pointer-events-none">
+                PROMO FILM &bull; 16:9
+            </span>
+
+            <!-- Quick Mute / Unmute Toggle -->
+            <button
+                id="fiji-mute-btn"
+                type="button"
+                aria-label="Unmute Fiji Water Promo audio"
+                class="absolute top-3 right-3 z-10 flex items-center gap-1.5 bg-black/75 hover:bg-white hover:text-black border border-white/25 backdrop-blur-sm px-2.5 py-1 rounded text-xs font-bebas tracking-widest text-gray-200 transition-colors cursor-pointer active:scale-95"
+            >
+                <svg id="fiji-icon-muted" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>
+                </svg>
+                <svg id="fiji-icon-unmuted" class="hidden w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>
+                </svg>
+                <span id="fiji-mute-label">MUTED</span>
+            </button>
         </div>
 
         <!-- Project Details -->
@@ -65,11 +93,11 @@
             <div class="col-span-1 flex flex-col gap-6 font-light">
                 <div>
                     <h3 class="font-bebas text-2xl tracking-widest text-gray-400 mb-2">ROLE</h3>
-                    <p class="text-sm tracking-wider text-gray-200">Motion Graphics Designer & Editor</p>
+                    <p class="text-sm tracking-wider text-gray-200">Motion Graphics Designer, Illustrator &amp; Editor</p>
                 </div>
                 <div>
                     <h3 class="font-bebas text-2xl tracking-widest text-gray-400 mb-2">TOOLS</h3>
-                    <p class="text-sm tracking-wider text-gray-200">After Effects, Blender, Premiere Pro</p>
+                    <p class="text-sm tracking-wider text-gray-200">After Effects, Illustrator, Blender, Premiere Pro</p>
                 </div>
                 <div>
                     <h3 class="font-bebas text-2xl tracking-widest text-gray-400 mb-2">TIMELINE</h3>
@@ -81,46 +109,53 @@
             <div class="col-span-1 md:col-span-2">
                 <h3 class="font-bebas text-3xl tracking-widest text-white mb-4">THE CONCEPT</h3>
                 <p class="text-gray-300 font-light tracking-wide leading-relaxed mb-6">
-                    This promotional piece for Fiji Water centers on crisp, refreshing motion design—combining fluid transitions, bold kinetic typography, and clean product staging to highlight the purity and iconic silhouette of the brand.
+                    This promotional spot for Fiji Water opens with chaotic visual noise before cutting into calm, atmospheric stillness—setting up the iconic "Be Water My Friend" philosophy and tracing Fiji Water's natural origin story.
                 </p>
                 <p class="text-gray-300 font-light tracking-wide leading-relaxed">
-                    Every cut is paced to a tight rhythmic soundscape, blending dynamic camera moves with subtle liquid and light accents to deliver a punchy, commercial-grade visual spot.
+                    Using textured 2D illustration, smooth motion transitions, and layered sound design, the piece follows rain falling over remote Fijian islands, filtering through rainforests and volcanic rock into an ancient artesian aquifer, culminating in a crisp product reveal.
                 </p>
-            </div>
-        </div>
-
-        <!-- Styleframes & Motion Breakdown Grid -->
-        <div class="w-full max-w-5xl mt-20">
-            <h3 class="font-bebas text-3xl tracking-widest text-white mb-6">STYLEFRAMES & BREAKDOWN</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Styleframe 1 -->
-                <div class="aspect-video bg-[#0a0a0a] border border-[#2a2a2a] rounded-sm relative group overflow-hidden flex items-center justify-center">
-                    <p class="font-bebas text-2xl text-[#2a2a2a] tracking-widest group-hover:scale-105 transition-transform duration-500">
-                        STYLEFRAME 01
-                    </p>
-                </div>
-                <!-- Styleframe 2 -->
-                <div class="aspect-video bg-[#0a0a0a] border border-[#2a2a2a] rounded-sm relative group overflow-hidden flex items-center justify-center">
-                    <p class="font-bebas text-2xl text-[#2a2a2a] tracking-widest group-hover:scale-105 transition-transform duration-500">
-                        STYLEFRAME 02
-                    </p>
-                </div>
-                <!-- Breakdown 3 -->
-                <div class="aspect-video bg-[#0a0a0a] border border-[#2a2a2a] rounded-sm relative group overflow-hidden flex items-center justify-center">
-                    <p class="font-bebas text-2xl text-[#2a2a2a] tracking-widest group-hover:scale-105 transition-transform duration-500">
-                        TYPOGRAPHY & LAYOUT
-                    </p>
-                </div>
-                <!-- Breakdown 4 -->
-                <div class="aspect-video bg-[#0a0a0a] border border-[#2a2a2a] rounded-sm relative group overflow-hidden flex items-center justify-center">
-                    <p class="font-bebas text-2xl text-[#2a2a2a] tracking-widest group-hover:scale-105 transition-transform duration-500">
-                        TIMELINE & COMPOSITING
-                    </p>
-                </div>
             </div>
         </div>
 
     </section>
+
+    <!-- Promo Video Audio Toggle Script -->
+    <script>
+        const fijiVideo = document.getElementById('fiji-promo-video');
+        const fijiMuteBtn = document.getElementById('fiji-mute-btn');
+        const fijiIconMuted = document.getElementById('fiji-icon-muted');
+        const fijiIconUnmuted = document.getElementById('fiji-icon-unmuted');
+        const fijiMuteLabel = document.getElementById('fiji-mute-label');
+
+        function syncFijiMuteUI() {
+            if (!fijiVideo || !fijiMuteBtn) return;
+            const isMuted = fijiVideo.muted;
+            fijiIconMuted.classList.toggle('hidden', !isMuted);
+            fijiIconUnmuted.classList.toggle('hidden', isMuted);
+            fijiMuteLabel.textContent = isMuted ? 'MUTED' : 'SOUND ON';
+
+            fijiMuteBtn.setAttribute('aria-label', `${isMuted ? 'Unmute' : 'Mute'} Fiji Water Promo audio`);
+            fijiMuteBtn.classList.toggle('bg-white', !isMuted);
+            fijiMuteBtn.classList.toggle('text-black', !isMuted);
+            fijiMuteBtn.classList.toggle('border-white', !isMuted);
+            fijiMuteBtn.classList.toggle('bg-black/75', isMuted);
+            fijiMuteBtn.classList.toggle('text-gray-200', isMuted);
+            fijiMuteBtn.classList.toggle('border-white/25', isMuted);
+        }
+
+        if (fijiVideo && fijiMuteBtn) {
+            fijiMuteBtn.addEventListener('click', () => {
+                fijiVideo.muted = !fijiVideo.muted;
+                if (!fijiVideo.muted) {
+                    fijiVideo.play().catch(() => {});
+                }
+                syncFijiMuteUI();
+            });
+
+            // Keep button synced with native player volume controls
+            fijiVideo.addEventListener('volumechange', syncFijiMuteUI);
+        }
+    </script>
 
 </body>
 </html>
